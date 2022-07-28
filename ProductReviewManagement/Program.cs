@@ -58,6 +58,9 @@ namespace ProductReviewManagement
             //Retrieve only Product ID and Review
             ProductManagement.RetrieveOnlyProductIdandReview(Product);
 
+            //Create DataTable and Add 25 dafault values
+            ProductManagement.CreateDataTableAndAddDefault25VAlues();
+
         }
 
     }
