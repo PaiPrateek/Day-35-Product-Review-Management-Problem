@@ -55,6 +55,9 @@ namespace ProductReviewManagement
             //Skip Top 5 Records 
             ProductManagement.SkipTop5Records(Product);
 
+            //Retrieve only Product ID and Review
+            ProductManagement.RetrieveOnlyProductIdandReview(Product);
+
         }
 
     }
