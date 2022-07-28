@@ -49,6 +49,9 @@ namespace ProductReviewManagement
             //Retrieve count of review present for each Product ID
             ProductManagement.RetrieveCountofReviewForEachProiductId(Product);
 
+            //Retrieve only Product Id and Review
+            ProductManagement.RetrieveOnlyProductIdAndReview(Product);
+
         }
 
     }
