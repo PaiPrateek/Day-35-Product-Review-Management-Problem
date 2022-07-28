@@ -103,7 +103,7 @@ namespace ProductReviewManagement
             }
         }
 
-        //Find Average RAting of Each Product ID
+        //Find Average Rating of Each Product ID
         public static void FindAverageRating(List<ProductReview> DataTable)
         {
             var result = DataTable.GroupBy(G => G.ProductId, R => R.Rating).Select(G => new { ProductID = G.Key, AvgRating = G.Average() });
@@ -120,6 +120,21 @@ namespace ProductReviewManagement
         {
             var result = DataTable.FindAll(x => x.Review.Contains("Nice")).ToList();
             Console.WriteLine("\nRetrieve All Data Records who's Review message contains nice :" );
+            foreach (var dt in result)
+            {
+                Console.WriteLine("\nProduct ID: " + dt.ProductId +
+                                    "\nUser ID: " + dt.UserId +
+                                    "\nRating: " + dt.Rating +
+                                    "\nReview: " + dt.Review +
+                                    "\nIS Liked : " + dt.isLike);
+            }
+        }
+        //Retrieve all the records of User ID 10 and Order By Rating
+        public static void OrderByRating(List<ProductReview> DataTable)
+        {
+            //var result = (from DT in DataTable orderby DT.Rating descending select DT ).ToList();
+            var result = DataTable.FindAll(x => x.UserId == 10).OrderByDescending(y => y.Rating).ToList();
+            Console.WriteLine("\nRetrieve all the records of User ID 10 and Order By Rating :");
             foreach (var dt in result)
             {
                 Console.WriteLine("\nProduct ID: " + dt.ProductId +
