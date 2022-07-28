@@ -93,6 +93,9 @@ namespace ProductReviewManagement
 
             //Find Average RAting of Each Product ID
             ProductManagement.FindAverageRating(DataTable);
+
+            //Retrieve All Data Records who's Review message contains nice
+            ProductManagement.RetrieveAllRecordsWhosReviewMessageContainsNice(DataTable);
         }
 
     }
