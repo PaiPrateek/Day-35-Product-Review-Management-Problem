@@ -87,45 +87,18 @@ namespace ProductReviewManagement
             }
         }
 
-        //Create DataTable and Add 25 dafault values
-        public static void CreateDataTableAndAddDefault25VAlues()
+        //Retrieve All Data Records who's IsLike is true
+        public static void RetrieveAllRecordsOfIsLikeValues(List<ProductReview> DataTable)
         {
-            Console.WriteLine("Creating DataTable and Adding 25 dafault values");
-            List<ProductReview> DataTable = new List<ProductReview>
-                {
-                new ProductReview() { ProductId = 12, UserId = 13, Rating = 4, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 10, UserId = 16, Rating = 2, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 35, UserId = 111, Rating = 1, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 80, UserId = 167, Rating = 5, Review = "Nice", isLike = true },
-                new ProductReview() { ProductId = 10, UserId = 13, Rating = 4, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 1, UserId = 15, Rating = 4, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 10, UserId = 19, Rating = 1, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 96, UserId = 12, Rating = 2, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 10, UserId = 16, Rating = 3, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 126, UserId = 111, Rating = 2, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 100, UserId = 178, Rating = 1, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 30, UserId = 123, Rating = 3, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 90, UserId = 18, Rating = 4, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 10, UserId = 11, Rating = 5, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 70, UserId = 16, Rating = 5, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 10, UserId = 19, Rating = 5, Review = "Nice", isLike = true },
-                new ProductReview() { ProductId = 90, UserId = 12, Rating = 2, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 40, UserId = 15, Rating = 1, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 60, UserId = 11, Rating = 4, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 9, UserId = 15, Rating = 1, Review = "Bad", isLike = false },
-                new ProductReview() { ProductId = 10, UserId = 19, Rating = 5, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 30, UserId = 19, Rating = 5, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 50, UserId = 11, Rating = 2, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 60, UserId = 25, Rating = 3, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 90, UserId = 19, Rating = 1, Review = "Nice", isLike = true }
-            };
-            foreach(var datatable in DataTable)
+            var result = (from DT in DataTable where DT.isLike == true select DT).ToList();
+            Console.WriteLine("\nRetrieve All Data Records who's IsLike is true :");
+            foreach (var dt in result)
             {
-                Console.WriteLine("\nProduct ID: " + datatable.ProductId +
-                                    "\nUser ID: " + datatable.UserId +
-                                    "\nRating: " + datatable.Rating +
-                                    "\nReview: " + datatable.Review +
-                                    "\nIS Liked : " + datatable.isLike);
+                Console.WriteLine("\nProduct ID: " + dt.ProductId +
+                                    "\nUser ID: " + dt.UserId +
+                                    "\nRating: " + dt.Rating +
+                                    "\nReview: " + dt.Review +
+                                    "\nIS Liked : " + dt.isLike);
             }
         }
     }
