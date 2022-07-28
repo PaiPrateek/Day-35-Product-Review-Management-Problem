@@ -88,7 +88,8 @@ namespace ProductReviewManagement
             //Retrieve only Product ID and Review
             ProductManagement.RetrieveOnlyProductIdandReview(Product);
 
-
+            //Retrieve All Data Records who's IsLike is true
+            ProductManagement.RetrieveAllRecordsOfIsLikeValues(DataTable);
         }
 
     }
