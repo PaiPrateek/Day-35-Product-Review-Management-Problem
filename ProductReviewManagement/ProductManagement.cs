@@ -102,5 +102,17 @@ namespace ProductReviewManagement
                                     "\nIS Liked : " + dt.isLike);
             }
         }
+
+        public static void FindAverageRating(List<ProductReview> DataTable)
+        {
+            var result = DataTable.GroupBy(G => G.ProductId, R => R.Rating).Select(G => new { ProductID = G.Key, AvgRating = G.Average() });
+            Console.WriteLine("Average Rating is :" );
+            foreach(var dt in result)
+            {
+                Console.WriteLine("\nProduct ID: " + dt.ProductID +
+                    "\nAverage Rating: " + dt.AvgRating );
+            }
+
+        }
     }
 }

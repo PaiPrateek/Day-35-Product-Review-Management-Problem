@@ -90,6 +90,9 @@ namespace ProductReviewManagement
 
             //Retrieve All Data Records who's IsLike is true
             ProductManagement.RetrieveAllRecordsOfIsLikeValues(DataTable);
+
+            //Find Average RAting of Each Product ID
+            ProductManagement.FindAverageRating(DataTable);
         }
 
     }
