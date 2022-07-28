@@ -35,10 +35,15 @@ namespace ProductReviewManagement
                 new ProductReview() { ProductId = 20, UserId = 15, Rating = 1, Review = "Bad", isLike = false },
                 new ProductReview() { ProductId = 80, UserId = 19, Rating = 5, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 30, UserId = 19, Rating = 5, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 50, UserId = 11, Rating = 2, Review = "Good", isLike = false },
+                new ProductReview() { ProductId = 50, UserId = 11, Rating = 2, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 60, UserId = 25, Rating = 3, Review = "Average", isLike = true },
-                new ProductReview() { ProductId = 90, UserId = 19, Rating = 1, Review = "Good", isLike = false }
+                new ProductReview() { ProductId = 90, UserId = 19, Rating = 1, Review = "Good", isLike = true }
             };
+
+            
+            ProductManagement.Top3Records(Product);
+
+
         }
 
     }
